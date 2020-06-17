@@ -25,42 +25,26 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   bool Rwall = true;
 
     const SDL_MessageBoxButtonData buttons[] = {
-        { /* .flags, .buttonid, .text */        0, 0, "Easy" },
-        { SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT, 1, "Medium" },
-        { SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT, 2, "Hard" },
-    };
-   /* const SDL_MessageBoxColorScheme colorScheme = {
-        { // .colors (.r, .g, .b) 
-            // [SDL_MESSAGEBOX_COLOR_BACKGROUND] 
-            { 255,   0,   0 },
-             [SDL_MESSAGEBOX_COLOR_TEXT] 
-            {   0, 255,   0 },
-             [SDL_MESSAGEBOX_COLOR_BUTTON_BORDER] 
-            { 255, 255,   0 },
-            // [SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND] 
-            {   0,   0, 255 },
-            // [SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED] 
-            { 255,   0, 255 }
-        }
-    };*/
+        { /* .flags, .buttonid, .text */        0, 0, "Wall" },
+        { SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT, 1, "Without Wall" },
+    };  
     const SDL_MessageBoxData messageboxdata = {
         SDL_MESSAGEBOX_INFORMATION, // .flags 
         NULL, // .window 
-        "example message box", // .title 
-        "select a button", // .message 
+        "Game Mode", // .title 
+        "select Mode", // .message 
         SDL_arraysize(buttons), // .numbuttons 
         buttons, // .buttons 
-        //&colorScheme  .colorScheme 
     };
     int buttonid;
     if (SDL_ShowMessageBox(&messageboxdata, &buttonid) < 0) {
         SDL_Log("error displaying message box");
         return ;
     }
-    if (buttonid == -1) {
-        SDL_Log("no selection");
-    } else {
-        SDL_Log("selection was %s", buttons[buttonid].text);
+    if (buttonid == 0) {
+      Rwall = true;
+    } else if(buttonid == 1) {
+      Rwall = false;
     }
 
 
@@ -152,6 +136,8 @@ void Game::Update() {
   if (food.x == new_x && food.y == new_y) {
     score++;
     PlaceFood();
+    PlaceBadFood();
+    
     // Grow snake and increase speed.
     snake.GrowBody();
     snake.speed += 0.02;
@@ -159,6 +145,7 @@ void Game::Update() {
   else if(BadFood.x == new_x && BadFood.y == new_y )
   {
     PlaceBadFood();
+    PlaceFood();
     // Decay  snake and decrase speed.
     snake.DecayBody();
     if(snake.alive == false)return;
