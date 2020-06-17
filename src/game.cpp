@@ -3,6 +3,23 @@
 #include "SDL.h"
 #include<string>
 
+// variable declarations
+static Uint8 *audio_pos; // global pointer to the audio buffer to be played
+static Uint32 audio_len; // remaining length of the sample we have to play
+void my_audio_callback(void *userdata, Uint8 *stream, int len) {
+	
+	if (audio_len ==0)
+		return;
+	
+	len = ( len > audio_len ? audio_len : len );
+	//SDL_memcpy (stream, audio_pos, len); 					// simply copy from one buffer into the other
+	SDL_MixAudio(stream, audio_pos, len, SDL_MIX_MAXVOLUME);// mix from one buffer into another
+	
+	audio_pos += len;
+	audio_len -= len;
+}
+
+
 Game::Game(std::size_t grid_width, std::size_t grid_height) 
     : snake(grid_width, grid_height),
       engine(dev()),
@@ -12,7 +29,7 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
   PlaceBadFood();
 }
 
-void Game::Run(Controller const &controller, Renderer &renderer,
+bool Game::Run(Controller const &controller, Renderer &renderer,
                std::size_t target_frame_duration) {
   Uint32 title_timestamp = SDL_GetTicks();
   Uint32 frame_start;
@@ -39,14 +56,13 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     int buttonid;
     if (SDL_ShowMessageBox(&messageboxdata, &buttonid) < 0) {
         SDL_Log("error displaying message box");
-        return ;
+        return false;
     }
     if (buttonid == 0) {
       Rwall = true;
     } else if(buttonid == 1) {
       Rwall = false;
     }
-
 
   while (running) {
     frame_start = SDL_GetTicks();
@@ -66,9 +82,32 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
     if((Rwall && snake.CheckWallCollsion()) || snake.alive == false)
     {
-      std::string msg{"Score: " + std::to_string(this->GetScore()) + "\n Size: " + std::to_string(this->GetSize())};
-      SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "You died!", msg.c_str(), NULL);
-      return;
+      std::string msg{"Score: " + std::to_string(this->GetScore()) + "\nSize: " + std::to_string(this->GetSize())+ +"\nWant To Play Again"};
+      //SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "You died!", msg.c_str(), NULL);
+          const SDL_MessageBoxButtonData buttons[] = {
+        { /* .flags, .buttonid, .text */        0, 0, "Yes" },
+        { SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT, 1, "No" },
+    };  
+    const SDL_MessageBoxData messageboxdata = {
+        SDL_MESSAGEBOX_INFORMATION, // .flags 
+        NULL, // .window 
+        "You Died!", // .title 
+        msg.c_str(), // .message 
+        SDL_arraysize(buttons), // .numbuttons 
+        buttons, // .buttons 
+    };
+    int buttonid;
+    if (SDL_ShowMessageBox(&messageboxdata, &buttonid) < 0) {
+        SDL_Log("error displaying message box");
+        return false;
+    }
+    if (buttonid == 0) {
+     return true;
+    } else if(buttonid == 1) {
+      return false;
+    }
+      
+     // return;
     }
     
     renderer.Render(snake, food, BadFood, Rwall);  //support for badfood 
