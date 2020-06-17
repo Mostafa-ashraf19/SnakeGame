@@ -16,7 +16,7 @@ Snake Game
 * add Modal box
   * When Snake die, a small dialog box appears and shows score and size informations also can select play agin. Console output is still available
 
-*  Play again
+* Play again
   * when Snake die you can play again without needed to rerun game another time or can terminate game. 
 
 * Toxic Foods
