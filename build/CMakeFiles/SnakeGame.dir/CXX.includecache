@@ -6,45 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/controller.h
+/home/mostafa/Downloads/SnakeGame/src/controller.h
 snake.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/snake.h
+/home/mostafa/Downloads/SnakeGame/src/snake.h
 
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/game.cpp
+/home/mostafa/Downloads/SnakeGame/src/game.cpp
 game.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/game.h
+/home/mostafa/Downloads/SnakeGame/src/game.h
 iostream
 -
 SDL.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/SDL.h
+/home/mostafa/Downloads/SnakeGame/src/SDL.h
 string
 -
 
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/game.h
+/home/mostafa/Downloads/SnakeGame/src/game.h
 random
 -
 SDL.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/SDL.h
+/home/mostafa/Downloads/SnakeGame/src/SDL.h
 controller.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/controller.h
+/home/mostafa/Downloads/SnakeGame/src/controller.h
 renderer.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/renderer.h
+/home/mostafa/Downloads/SnakeGame/src/renderer.h
 snake.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/snake.h
+/home/mostafa/Downloads/SnakeGame/src/snake.h
 
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/renderer.h
+/home/mostafa/Downloads/SnakeGame/src/renderer.h
 vector
 -
 SDL.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/SDL.h
+/home/mostafa/Downloads/SnakeGame/src/SDL.h
 snake.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/snake.h
+/home/mostafa/Downloads/SnakeGame/src/snake.h
 
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/snake.h
+/home/mostafa/Downloads/SnakeGame/src/snake.h
 vector
 -
 SDL.h
-/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/SDL.h
+/home/mostafa/Downloads/SnakeGame/src/SDL.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h

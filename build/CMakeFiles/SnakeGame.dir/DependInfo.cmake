@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/controller.cpp" "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/controller.cpp.o"
-  "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/game.cpp" "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/game.cpp.o"
-  "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/main.cpp" "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/main.cpp.o"
-  "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/renderer.cpp" "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/renderer.cpp.o"
-  "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/src/snake.cpp" "/home/mostafa/Downloads/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/snake.cpp.o"
+  "/home/mostafa/Downloads/SnakeGame/src/controller.cpp" "/home/mostafa/Downloads/SnakeGame/build/CMakeFiles/SnakeGame.dir/src/controller.cpp.o"
+  "/home/mostafa/Downloads/SnakeGame/src/game.cpp" "/home/mostafa/Downloads/SnakeGame/build/CMakeFiles/SnakeGame.dir/src/game.cpp.o"
+  "/home/mostafa/Downloads/SnakeGame/src/main.cpp" "/home/mostafa/Downloads/SnakeGame/build/CMakeFiles/SnakeGame.dir/src/main.cpp.o"
+  "/home/mostafa/Downloads/SnakeGame/src/renderer.cpp" "/home/mostafa/Downloads/SnakeGame/build/CMakeFiles/SnakeGame.dir/src/renderer.cpp.o"
+  "/home/mostafa/Downloads/SnakeGame/src/snake.cpp" "/home/mostafa/Downloads/SnakeGame/build/CMakeFiles/SnakeGame.dir/src/snake.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
