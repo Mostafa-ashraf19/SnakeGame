@@ -1,6 +1,6 @@
 # SnakeGame
 
-Snake Game builded using modern Cpp and SDL library, idea of game based on main basic games principle 
+Snake Game builded using modern Cpp and SDL library, idea of game based on main basic games principle, `input - update - rendering - timing control `
 ![idea](
 https://github.com/Mostafa-ashraf19/SnakeGame/blob/master/Images/game-loop-simple.png?raw=true
 )
@@ -53,7 +53,7 @@ https://github.com/Mostafa-ashraf19/SnakeGame/blob/master/Images/Snake%20ClassDi
 | use move semantics  | 48 | e.g. game.cpp | e.g. DeadMessage |
 | use RAII concept | 24 | obstcals.cpp | setObstacls |
 
-### Memory management
+### Concurrency
   * next update sounds effects.
  
  
