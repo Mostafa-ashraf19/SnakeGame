@@ -1,9 +1,24 @@
 # SnakeGame
-Snake Game
+
+Snake Game builded using modern Cpp and SDL library, idea of game based on main basic games principle 
+![idea](
+https://github.com/Mostafa-ashraf19/SnakeGame/blob/master/Images/game-loop-simple.png?raw=true
+)
+
+## Game view 
+
+![gameGif](
+https://github.com/Mostafa-ashraf19/SnakeGame/blob/master/Images/game.gif?raw=true
+)
+
 
 
 ## Class Diagram 
-  - Soon
+  UML class diagram
+  ![diagram](
+https://github.com/Mostafa-ashraf19/SnakeGame/blob/master/Images/Snake%20ClassDiagram.png?raw=true
+)
+
 
 ## New Features
 * Pause
@@ -24,7 +39,7 @@ Snake Game
   * when Snake eat it, the Snake speed decrease and  loss size.
   
 * new feature  
-  * will add background sound.
+  * will add background sound using threads.
   * soon.
  
 ## Dependencies for Running Locally
