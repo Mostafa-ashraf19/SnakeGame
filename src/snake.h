@@ -16,7 +16,7 @@ class Snake {
 
   void Update();
 
-  void GrowBody();  
+  void GrowBody();
   void DecayBody();
   bool SnakeCell(int x, int y);
   bool CheckWallCollsion() const;
