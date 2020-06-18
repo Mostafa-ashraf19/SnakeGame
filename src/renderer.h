@@ -17,6 +17,7 @@ class Renderer : public obstcals
   //void Render(Snake const snake, SDL_Point const &food);
   void Render(Snake const snake, SDL_Point const &food,SDL_Point const &badfood, bool wall );
   void Render(bool& wall);
+  void Render();
   void UpdateWindowTitle(int score, int fps);
   //void termnaite();
 
@@ -30,8 +31,9 @@ class Renderer : public obstcals
   const std::size_t grid_width;
   const std::size_t grid_height;
 
+    std::vector<SDL_Rect> sides;
  //friend class obstcals;
- obstcals o;
+ obstcals Obstcal;
 };
 
 #endif

@@ -32,7 +32,7 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
 
-  
+  Obstcal.setObstacls();
 }
 
 Renderer::~Renderer() {
@@ -64,7 +64,7 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, SDL_Point const 
 
   // render wall
   if(wall)
-    this->Render(wall);
+    this->Render();
 
   // Render snake's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
@@ -87,6 +87,16 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, SDL_Point const 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);
 }
+
+void Renderer::Render()
+{
+  for(auto& s : Obstcal.walls)
+    {
+  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+  SDL_RenderFillRect(sdl_renderer, &s);
+    }
+}
+
 void Renderer:: Render(bool& wall){
   if(wall)
   {
@@ -124,6 +134,7 @@ void Renderer:: Render(bool& wall){
   SDL_RenderFillRect(sdl_renderer, &LeftWall);
   }
 }
+
 void Renderer::UpdateWindowTitle(int score, int fps) {
   std::string title{"Snake Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
