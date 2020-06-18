@@ -8,6 +8,8 @@
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"
+#include "MessageBoxes.h"
+#include <memory>
 
 class Game {
  public:
@@ -33,6 +35,8 @@ class Game {
   void PlaceFood();
   void PlaceBadFood();
   void Update();
+
+   std::unique_ptr<MessageBoxes> messagebox;
 
 };
 
