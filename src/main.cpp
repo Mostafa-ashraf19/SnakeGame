@@ -11,10 +11,11 @@ int main() {
   constexpr std::size_t kGridWidth{32};
   constexpr std::size_t kGridHeight{32};
   bool playAgain = false;
-  do
-  {
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
+  do
+  {
+  
   Game game(kGridWidth, kGridHeight);
   playAgain =  game.Run(controller, renderer, kMsPerFrame);
   std::cout << "Game has terminated successfully!\n";
