@@ -31,6 +31,8 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "Renderer could not be created.\n";
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
+
+  
 }
 
 Renderer::~Renderer() {
@@ -62,7 +64,7 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, SDL_Point const 
 
   // render wall
   if(wall)
-    this->RenderWall();
+    this->Render(wall);
 
   // Render snake's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
@@ -85,7 +87,9 @@ void Renderer::Render(Snake const snake, SDL_Point const &food, SDL_Point const 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);
 }
-void Renderer:: RenderWall(){
+void Renderer:: Render(bool& wall){
+  if(wall)
+  {
   SDL_Rect aboveWall;
   aboveWall.h=20;
   aboveWall.w=this->screen_width;
@@ -118,6 +122,7 @@ void Renderer:: RenderWall(){
   LeftWall.x = (0) ;//* block2.w;
   LeftWall.y = (0) ;//* block2.h;
   SDL_RenderFillRect(sdl_renderer, &LeftWall);
+  }
 }
 void Renderer::UpdateWindowTitle(int score, int fps) {
   std::string title{"Snake Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
