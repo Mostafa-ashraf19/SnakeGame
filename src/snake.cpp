@@ -77,7 +77,7 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) 
 
 void Snake::GrowBody() { growing = true; }
 void Snake:: DecayBody(){ 
-     if(body.size() <= 1)
+     if(body.size() < 1)
           {alive=false;
           size--;
         return;}
