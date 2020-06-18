@@ -19,6 +19,45 @@ https://github.com/Mostafa-ashraf19/SnakeGame/blob/master/Images/game.gif?raw=tr
 https://github.com/Mostafa-ashraf19/SnakeGame/blob/master/Images/Snake%20ClassDiagram.png?raw=true
 )
 
+## Rubric points position in source code
+
+### Compiling and testing 
+
+  :heavy_check_mark: done
+
+### Loops, functions, I/Os
+
+| Criteria | Line | Class | Method |
+| ---------|------|-------|--------|
+| The project demonstrates an understanding of C++ functions and control structures. | - | game.cpp |  call all need encapsulated functions  |
+| The project reads data from a file and process the data | 24 | obstcals.cpp | setObstacls |
+| The project accepts user input and processes the input. | 16/11 | MessageBoxes.cpp | MainSelectionWindow/DeadMessage |
+
+### Object oriented programming
+
+| Criteria | Line | Class | Method |
+| ---------|------|-------|--------|
+| Classes use appropriate access specifiers for class members. | - | e.g. MessageBoxes.h/obstcals.h |
+| Class constructors utilize member initialization lists. | - | obstcals.h | obstcals |
+| Classes encapsulate behavior. | 24 | obstcals.h | e.g. setObstacls |
+| Classes follow an appropriate inheritance hierarchy. | - | renderer.h(child) obstcals.h(base) | - |
+| Overloaded functions allow the same function to operate on different parameters. | - | renderer.h | Render |
+| Templates generalize functions in the project. | 16 | MessageBoxes.h | MainSelectionWindow |
+
+### Memory management
+
+| Criteria | Line | Class | Method |
+| ---------|------|-------|--------|
+| The project makes use of references in function declarations. | - | e.g. MessageBoxes.h/obstcals.h | e.g. DeadMessage, MainSelectionWindow, setYrOwnObstacl |
+| The project uses smart pointers instead of raw pointers. | 39 | game.h | messagebox |
+| use move semantics  | 48 | e.g. game.cpp | e.g. DeadMessage |
+| use RAII concept | 24 | obstcals.cpp | setObstacls |
+
+### Memory management
+  * next update sounds effects.
+ 
+ 
+> Note: all remaning features will support in next updates 
 
 ## New Features
 * Pause
@@ -26,7 +65,9 @@ https://github.com/Mostafa-ashraf19/SnakeGame/blob/master/Images/Snake%20ClassDi
 
 * There is a **wall** option available. 
   * can select mode of play from messagebox by select play **with/without** wall. 
-  * If select wall and Snake touch wall will die. 
+  * If select wall and Snake touch wall will die.
+  
+* add different shapes and can add your own shape
 
 * add Modal box
   * When Snake die, a small dialog box appears and shows score and size informations also can select play agin. Console output is still available
@@ -59,7 +100,7 @@ https://github.com/Mostafa-ashraf19/SnakeGame/blob/master/Images/Snake%20ClassDi
 
 ## Basic Build Instructions
 
-1. Clone this repo.
+1. Clone this repo  `git clone https://github.com/Mostafa-ashraf19/SnakeGame.git`.
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
